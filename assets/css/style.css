@@ -1,0 +1,109 @@
+:root {
+  --fontSize: 1em;
+  --fontColor: #888888;
+  --highlightColor: #ff4500;
+  --background: url("/assets/images/bg.png") #1e1e1e;
+  --linkHoverColor: #ff4500;
+  --shadowColor: #000000;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/Roboto-Regular.ttf");
+  /* https://fonts.google.com/specimen/Roboto */
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  text-shadow: 1px 1px 1px var(--shadowColor);
+}
+
+html, body {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  background: var(--background);
+  color: var(--fontColor);
+  font-size: var(--fontSize);
+  display: flex;
+  flex-direction: column;
+  padding: 0px var(--fontSize);
+}
+
+a {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--fontColor);
+  transition: all 0.3s;
+}
+
+a:hover, a:focus {
+  color: var(--linkHoverColor);
+}
+
+#wrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: calc(var(--fontSize) * 2);
+}
+
+#header {
+  display: block;
+  font-size: calc(var(--fontSize) * 3);
+  text-shadow: 2px 2px 3px var(--shadowColor);
+  margin-bottom: calc(var(--fontSize) * 0.8);
+}
+
+#preamble {
+  font-size: calc(var(--fontSize) * 1.5);
+  margin-bottom: calc(var(--fontSize) * 1.5);
+}
+
+.info:not(:last-of-type) {
+  margin-bottom: calc(var(--fontSize) * 2.5);
+}
+
+.date {
+  font-size: calc(var(--fontSize) * 0.7);
+  font-style: italic;
+  color: var(--highlightColor)
+}
+
+p {
+  margin-bottom: calc(var(--fontSize) * 0.4);
+}
+
+#footer {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  font-size: calc(var(--fontSize) * 0.7);
+  padding: calc(var(--fontSize) * 0.4);
+}
+
+#footer > a {
+  color: var(--fontColor);
+  transition: all 0.4s;
+  padding: 0px calc(var(--fontSize) * 0.6);
+}
+
+#footer > a:not(:first-child) {
+  border-left: 1px solid var(--fontColor);
+}
+
+#footer > a:hover, #footer > a:focus {
+  color: var(--linkHoverColor);
+  text-decoration: underline;
+}
